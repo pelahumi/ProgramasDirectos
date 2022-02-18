@@ -239,6 +239,7 @@ Fin es_deudora
 ```
 
 ## Ejercicio 12.2
+### Tipo de cuenta
 ```
 tipo Cuenta estructura
     saldo : Real
@@ -248,7 +249,9 @@ tipo Cuenta estructura
         //El saldo debe ser superior al descubierto autorizado
         saldo >= -descubierto
 Fin Cuenta
-
+```
+### Abrir cuenta
+```
 Algoritmo abrir_cuenta
     abrir(c : Cuenta; saldo_inicial : Real; descubierto_Max : Real)
 Precondicion
