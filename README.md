@@ -33,6 +33,25 @@ Algoritmo Intereses_generados
     //Escribimos el resultado
     Escribir "Los intereses generados durante ",tiempo," meses es: ",intereses_generados," con un interés del: ",interes
 
+FinAlgoritmo
+```
+
+## Ejercicio 9
+```
+Algorimo Media_aritmetica
+
+    //Definimos las variables
+    Definir a, b, c Como Enteros
+    Leer a, b, c
+
+    media = (a + b +c) / 3
+
+    //Escribimos el resultado
+    Escribir "La media aritmética es: ", media
+
+FinAlgoritmo
+
+
 
 
 
