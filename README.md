@@ -207,5 +207,61 @@ Postcondición
     c.saldo = antiguo(c).saldo - debito
 Fin cargar_cuenta
 
+Algoritmo consultar_cuenta
+    consultar(c : Cuenta) : Real
+Precondición
+    c.saldo =! 0
+Realización
+    Resultado <- c.saldo
+Postcondición
+    Resultado = c.saldo
+Fin consultar_cuenta
+
+Algoritmo es_acreedora
+    es_acreedora(c : Cuenta) : Booleano
+Precondición
+    c.saldo =! 0
+Realización
+    Resultado <- (c.saldo > 0)
+Postcondición
+    Resultado = (c.saldo > 0)
+Fin es_acreedora
+
+Algoritmo es_deudora
+    es_deudora (c : Cuenta) : Booleano
+Precondición
+    c.saldo =! 0
+Realización
+    Resultado <- (-c.descubierto <= c.saldo <= 0)
+Postcondición
+    Resultado = (-c.descubierto <= c.saldo <= 0)
+Fin es_deudora
+```
+
+## Ejercicio 12.2
+```
+tipo Cuenta estructura
+    saldo : Real
+    invariante 
+        //El descubierto está autorizado
+        descubierto >= 0 
+        //El saldo debe ser superior al descubierto autorizado
+        saldo >= -descubierto
+Fin Cuenta
+
+Algoritmo abrir_cuenta
+    abrir(c : Cuenta; saldo_inicial : Real; descubierto_Max : Real)
+Precondicion
+    saldo_inicial > 0
+    descubierto_Max >= 0
+Realización
+    c.descubierto <- descubierto_Max
+    c.saldo <- saldo_inicial
+Postcondición
+    c.descubierto = descubierto_Max
+    c.saldo = saldo_inicial
+Fin abrir_cuenta
+
+
 
     
