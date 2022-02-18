@@ -148,6 +148,64 @@ Postcondición
     Resultado = salario_mensual_bruot * 12,0 / Real(35 * 52)
 
 Fin precio_horas_bruto
-``
+```
+
+## Ejercicio 12.1
+### Tipo datos de cuenta
+```
+tipo Cuenta estructura
+    saldo : Real
+    invariante
+        //El descubierto no está autorizado
+        saldo >= 0
+Fin Cuenta
+```
+
+### Operaciones aplicables
+```
+Algoritmo abrir_cuenta
+    abrir(c : Cuenta; saldo_inicial : Real)
+Precondición
+    saldo_inicial > 0
+Realización
+    c.descubrimiento <- 0 
+    c.saldo <- saldo_inicial
+Postcondicion
+    c.descubierto = 0
+    //El descubierto no está autorizado
+    antiguo(saldo_inicial) = saldo_inicial
+    c,saldo = saldo_inicial
+Fin abrir_cuenta
+
+Algoritmo abonar_cuenta
+Precondición 
+    c.saldo =! 0
+    credito =! 0
+Realización
+    c.saldo <- c.saldo + credito
+Postcondición
+    //El descubierto autorizado y el importe del credito no se modifican
+    antiguo(c).descubierto = descubierto
+    antiguo(c).credito = credito
+    //El saldo de la cuenta aumenta con el credito
+    c.saldo = antiguo(c).saldo + credito
+Fin abonar_cuenta
+
+Algoritmo cargar_cuenta
+Precondición
+    c.saldo =! 0
+    debito =! 0
+    c.saldo + c.descubierto >= debito >= 0
+Realización
+    abonar(c, -debito)
+Postcondición
+    //El descubierto autorizado y el importe del debito no se modifican
+    antiguo(c).descubierto = descubierto
+    antiguo(debito) = debito
+
+    //Al saldo se le resta el debito
+    c.saldo = antiguo(c).saldo - debito
+Fin cargar_cuenta
+
 
     
