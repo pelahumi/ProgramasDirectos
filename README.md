@@ -51,6 +51,19 @@ Algorimo Media_aritmetica
 
 FinAlgoritmo
 
+Algoritmo Media_ponderada
+
+    //Definimos las variables números
+    Definir a, b, c Como Enteros
+    //Definimos las variables coeficientes de ponderación
+    Definir x, y, z Como Reales
+
+    media = (a * x) + (b * y) + (c * z)
+
+    //Escribimos el resultado
+    Escribir "La media ponderada de los tres números es: ", media
+
+FinAlgoritmo
 
 
 
