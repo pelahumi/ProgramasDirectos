@@ -64,8 +64,37 @@ Algoritmo Media_ponderada
     Escribir "La media ponderada de los tres números es: ", media
 
 FinAlgoritmo
+```
 
+## Ejercicio 10
+```
+Algoritmo Area_triangulo
+    
+    //Definimos las variables
+    Definir lado, altura Como Enteros
+    Leer lado, altura
 
+    area = (lado * altura)/ 2
+
+    //Escribimos el resultado
+    Escribir "El área del triángulo es: ", area
+
+FinAlgoritmo
+
+Algoritmo Area_triangulo_rectangulo
+
+    //Definimos las variables
+    Definir lado1, lado2 Como Enteros
+    Leer lado1, lado2
+
+    //Uno de los dos lados perpendiculares será la altura del triángulo
+
+    Area_triangulo(lado1, lado2)
+
+    FinArea_triangulo
+
+FinAlgoritmo
+```
 
 
 
